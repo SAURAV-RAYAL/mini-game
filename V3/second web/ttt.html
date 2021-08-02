@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TIC TAK TOE</title>
+        <link rel="stylesheet" href="ttt.css">
+        <script src="ttt.js"></script>
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    </head>
+    <body style="background:lawngreen;">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li style="position: relative; margin-left: 0px;"class="nav-item">
+                <form class="container-fluid justify-content-start">
+                    <div class="input-group mb-3">
+                        <button class="btn btn-success" style="color: white;" id="basic-addon1" disabled>KNIGHT_1</button>
+                        <span style="color: khaki;">_</span>
+                        <input id="Player1" onblur="playerName('Player1')" type="text" class="btn btn-light" placeholder="Knight_Name" aria-label="Username" aria-describedby="basic-addon1">
+                        <span style="color: khaki;">_</span>
+                        <div class="btn-group">
+                            <button id='sign1'type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                ❌
+                            </button>
+                            <ul class="dropdown-menu">
+                              <li><a id="signe11" onclick="Sign('signe11','sign1')" class="dropdown-item" href="#">👊</a></li>
+                              <li><a id="signe12" onclick="Sign('signe12','sign1')" class="dropdown-item" href="#">🤟</a></li>
+                              <li><a id="signe13" onclick="Sign('signe13','sign1')" class="dropdown-item" href="#">👩🏻‍🚀</a></li>
+                              <li><hr class="dropdown-divider"></li>
+                              <li><a id="signe14" onclick="Sign('signe14','sign1')" class="dropdown-item" href="#">❌</a></li>
+                            </ul>
+                          </div>
+                    </div>
+                    </form>
+                </li>
+                <li style="position: relative; margin-left: 50px;"class="nav-item">
+                    <form class="container-fluid justify-content-start">
+                        <div class="input-group mb-3">
+                            <input id="GInfo"type="text" class="btn btn-light" placeholder="GAME INFO" aria-label="Username" aria-describedby="basic-addon1" disabled>
+                          </div>
+                        </form>
+                    </li>
+                    <li style="position: relative; margin-left: 50px;"class="nav-item">
+                        <form class="container-fluid justify-content-start">
+                            <div style='position: absolute; margin-left: -60px;width: 50px;'class="input-group mb-3">
+                                <button id='sign2'type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                    ✔️
+                                </button>
+                                <ul class="dropdown-menu">
+                                  <li><a id="signe21" onclick="Sign('signe21','sign2')" class="dropdown-item" href="#">👊</a></li>
+                                  <li><a id="signe22" onclick="Sign('signe22','sign2')" class="dropdown-item" href="#">🤟</a></li>
+                                  <li><a id="signe23" onclick="Sign('signe23','sign2')" class="dropdown-item" href="#">👩🏻‍🚀</a></li>
+                                  <li><hr class="dropdown-divider"></li>
+                                  <li><a id="signe24" onclick="Sign('signe24','sign2')" class="dropdown-item" href="#">✔️</a></li>
+                                </ul>
+                              </div>
+                          <span style="color: khaki;">_</span>
+                                <input id="Player2" onblur="playerName('Player2')"type="text" class="btn btn-light" placeholder="Knight_Name" aria-label="Username" aria-describedby="basic-addon1">
+                                <span style="color: khaki;">_</span>
+                                <button class="btn btn-success" style="color: white;" id="basic-addon1" disabled>KNIGHT_2</button>  
+                            </div>
+                            </form>
+                        </li>
+</ul>
+       </div>
+            </div>
+          </nav>
+          <div class="container">
+            <div class="row row-cols-3">
+              <div onmouseover="HoverEffect(1)" onclick="ClickDone(1)" id="1" class="col"></div>
+              <div onmouseover="HoverEffect(2)" onclick="ClickDone(2)" id="2" class="col"></div>
+              <div onmouseover="HoverEffect(3)" onclick="ClickDone(3)" id="3" class="col"></div>
+              <div onmouseover="HoverEffect(4)" onclick="ClickDone(4)" id="4" class="col"></div>
+              <div onmouseover="HoverEffect(5)" onclick="ClickDone(5)" id="5" class="col"></div>
+              <div onmouseover="HoverEffect(6)" onclick="ClickDone(6)" id="6" class="col"></div>
+              <div onmouseover="HoverEffect(7)" onclick="ClickDone(7)" id="7" class="col"></div>
+              <div onmouseover="HoverEffect(8)" onclick="ClickDone(8)" id="8" class="col"></div>
+              <div onmouseover="HoverEffect(9)" onclick="ClickDone(9)" id="9" class="col"></div>
+            </div>
+          </div>
+
+          <div class="btn-group dropup">
+            <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+              Mode Selection
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              <li><a class="dropdown-item" href="/main web/ttt.html">Easy Mode</a></li>
+              <li><a class="dropdown-item active" href="/second web/ttt.html">Medium Mode</a></li>
+            </ul>
+          </div>
+          
+<!-- Button trigger modal -->
+<button id='101' type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" hidden>
+  Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" data-bs-backdrop="static" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">WIN THE GAME TO GET THIS BLOCK  /  you vs AI</h5>
+      </div>
+      <div class="modal-body">
+          <div class="card-group">
+              <div onclick='clickfn("stone")' class="card">
+                <div style='color: lightslategray;' class="card bg-dark text-white">
+                  <img src="st.webp" class="card-img" alt="...">
+                  <div class="card-img-overlay">
+                    <h5 class="card-title"><img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/emojidex/112/raised-fist_270a.png" style="width: 50px;"> (STONE)</h5>
+                    <p class="card-text"><img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/emojidex/112/raised-fist_270a.png" style="width: 25px;"> WINS <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/microsoft/209/black-scissors_2702.png" style="width: 25px;"></p>
+                    <p class="card-text"><img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/emojidex/112/page-with-curl_1f4c3.png" style="width: 25px;"> WINS <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/emojidex/112/raised-fist_270a.png" style="width: 25px;"></p>
+                  </div>
+                </div>
+              </div>
+              <div onclick='clickfn("paper")' class="card">
+                <div class="card bg-dark text-white">
+                  <img src="pa.webp" class="card-img" alt="...">
+                  <div class="card-img-overlay">
+                    <h5 class="card-title"><img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/emojidex/112/page-with-curl_1f4c3.png" style="width: 50px;"> (PAPER)</h5>
+                    <p class="card-text"><img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/emojidex/112/page-with-curl_1f4c3.png" style="width: 25px;"> WINS <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/emojidex/112/raised-fist_270a.png" style="width: 25px;"></p>
+                    <p class="card-text"><img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/microsoft/209/black-scissors_2702.png" style="width: 25px;"> WINS <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/emojidex/112/page-with-curl_1f4c3.png" style="width: 25px;"></p>
+                  </div>
+                </div>
+              </div>
+              <div onclick='clickfn("scissor")' class="card">
+                <div class="card bg-dark text-white">
+                  <img src="sc.webp" class="card-img" alt="...">
+                  <div class="card-img-overlay">
+                    <h5 class="card-title"><img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/microsoft/209/black-scissors_2702.png" style="width: 50px;"> (SCISSOR)</h5>
+                    <p class="card-text"><img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/microsoft/209/black-scissors_2702.png" style="width: 25px;"> WINS <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/emojidex/112/page-with-curl_1f4c3.png" style="width: 25px;"></p>
+                    <p class="card-text"><img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/emojidex/112/raised-fist_270a.png" style="width: 25px;"> WINS <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/microsoft/209/black-scissors_2702.png" style="width: 25px;"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+      </div>
+    </div>
+  </div>
+    </body>
+</html>

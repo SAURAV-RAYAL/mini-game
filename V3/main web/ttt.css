@@ -1,0 +1,19 @@
+.container{
+    width: 400px;
+    height: 370px;
+    margin: 50px;
+   /* background-color: brown;*/
+}
+.col{
+    width: 50px;
+    height: 140px;
+    position: relative;
+    padding: 50px;
+    background-color: burlywood;
+    display: flex;
+  align-items: center;
+  justify-content: center;
+  border:2px solid darkgoldenrod;
+  border-radius: 20px;
+  font-size: 50px;
+}
