@@ -1,5 +1,5 @@
 let backgroundSound = document.createElement('audio');
-backgroundSound.src='music.mp3';
+backgroundSound.src='/web/audio/music.mp3';
 player1=false;
 player2=false;
 let playername1='';
@@ -139,11 +139,11 @@ else{
 }
 }
 let winSound = document.createElement('audio');
-winSound.src='win.mp3';
+winSound.src='/web/audio/win.mp3';
 let errorSound = document.createElement('audio');
-errorSound.src='error.mp3';
+errorSound.src='/web/audio/error.mp3';
 let clickSound = document.createElement('audio');
-clickSound.src = 'click.mp3';
+clickSound.src = '/web/audio/click.mp3';
 function soundEffect(soundName){
     if(soundName==='winSound'){winSound.play();}
     else if(soundName==='clickSound'){clickSound.play();}
